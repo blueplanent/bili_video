@@ -113,12 +113,12 @@ def get_one(entry_url,title=0):
         if res:
             file_write.file_write(res, audio_path)
             break
-    options = {
-        1: file_write.option1,
-        2: file_write.option2,
-        3: file_write.option3
-    }
-    options[config.file_option](video_path, audio_path)
+    # options = {
+    #     1: file_write.option1,
+    #     2: file_write.option2,
+    #     3: file_write.option3
+    # }
+    # options[config.file_option](video_path, audio_path)
 
 # 抓取整个合集
 def get_all(entry_url):
@@ -142,8 +142,8 @@ def get_all(entry_url):
 
 
 if __name__ == '__main__':
-    entry_url = "https://www.bilibili.com/video/BV1ngySYxEJx"
-    title = "他们或许真的能拯救国足....."
+    entry_url = "https://www.bilibili.com/video/BV1QY411b7Kf/?spm_id_from=333.337.search-card.all.click"
+    title = "[问号]"
 
     if config.scrape_option == 1:
         get_one(entry_url, title)
