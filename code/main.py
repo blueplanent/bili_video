@@ -17,7 +17,7 @@ from urllib import parse
 import web_page_parsing
 import config
 
-cookies = "buvid3=338B4E39-B9A3-551F-3309-16418A3E4A7A65281infoc; b_nut=1715768865; _uuid=6414C5DA-2AD5-8281-7724-D10241591671D66787infoc; buvid4=A84E2CFE-785A-3BC2-FF9D-D27DC066F5D938158-024033004-VpVPcDfyDBYapODwJgQqhw%3D%3D; rpdid=|(JYl)kmkuR)0J'u~ul~Y)))u; iflogin_when_web_push=0; header_theme_version=CLOSE; DedeUserID=484890515; DedeUserID__ckMd5=90b98033b995359d; enable_web_push=DISABLE; buvid_fp_plain=undefined; LIVE_BUVID=AUTO8117158623388548; PVID=1; hit-dyn-v2=1; home_feed_column=5; fingerprint=d2e4dcc62522dc26c76cb2730282d73a; CURRENT_QUALITY=80; CURRENT_BLACKGAP=0; buvid_fp=d2e4dcc62522dc26c76cb2730282d73a; CURRENT_FNVAL=4048; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzAyNjQ4NjQsImlhdCI6MTczMDAwNTYwNCwicGx0IjotMX0.W-m3fsrB8ShSpDzvLFtOoT96shj3ztTZc4BmxL_te6E; bili_ticket_expires=1730264804; b_lsid=D6F39C62_192CC8C438A; SESSDATA=77c9a4c3%2C1745560601%2C92c7b%2Aa1CjBcKQUlAlm_iiAGNSHdAuYMUnBvQqCBFKl9aaNG7OuXii13XSnLp7G07ToJWj2WQMcSVnQzQ3RtcUdnc2UxQ1h3cjFwSk9ZWTlSMV9oRmlyVzJpai1wSEJBemptcXlKdW1xOFdiYlgwSUFOM2hWNVluZ3E0VW13QzdfYzF3UXA4aE15Mlo2SWl3IIEC; bili_jct=3e2bcbe408e9a9b1f73271f9660bf2fc; sid=6fju1fdu; bp_t_offset_484890515=992872752367009792; browser_resolution=1489-710"
+cookies = "buvid3=E02D1C1E-EE31-307A-7809-DA6D08532D8E65700infoc; b_nut=1728120365; _uuid=1457107102-D97A-6498-9F49-AB7D14E8716F66994infoc; buvid4=1421D9DA-A74A-CED2-A0FA-E207C49EE8EC70651-024100509-UUXyNy9lPIW3btqqthYSVQ%3D%3D; rpdid=|(J~RYukl)Y~0J'u~k)uk|J~J; buvid_fp_plain=undefined; header_theme_version=CLOSE; enable_web_push=DISABLE; home_feed_column=5; browser_resolution=1797-839; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzAyNTA2NTYsImlhdCI6MTcyOTk5MTM5NiwicGx0IjotMX0.wL19Y7kfm6wt152LmS1NMBU5ZOuPsV6dYyobsypyFn8; bili_ticket_expires=1730250596; fingerprint=355933030be7e270f3aa12997fc9ee2f; buvid_fp=355933030be7e270f3aa12997fc9ee2f; CURRENT_BLACKGAP=0; CURRENT_FNVAL=4048; b_lsid=666E955D_192D75E9505; bmg_af_switch=1; bmg_src_def_domain=i2.hdslb.com; sid=6p402t8i"
 headers = {
     "referer": "https://www.bilibili.com/",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
@@ -42,7 +42,7 @@ def retry(n):
 @retry(3)
 def req(url):
     try:
-        time.sleep(10)
+        # time.sleep(10)
         res = requests.get(url, headers=headers, timeout=(3.1, 10))
         if res.status_code == 200:
             return res
@@ -64,7 +64,6 @@ def file_write(urls,path):
             with open(path, 'wb') as f:
                 f.write(res.content)
             break
-
 
 
 # 抓取单个视频
