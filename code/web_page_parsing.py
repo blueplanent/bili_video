@@ -7,20 +7,154 @@
 
 import json
 import re
+import time
 
-# 接收reponse对象，获取总的媒体链接信息
-def get_medium_inf(res):
-    pattern = r'"video":.*?,"audio":.*?(?=,"dolby":)'
-    a = re.search(pattern, res.text)
+from lxml import etree
+
+def get_main_inf1(html_text):
+    """获取 window.__INITIAL_STATE__ 的值"""
+    pattern_total_inf = '__INITIAL_STATE__=(.*?);\(function\(\)'
+    a = re.search(pattern_total_inf, html_text)
+    dic = json.loads(a.group(1))
+    return dic
+
+
+def get_main_inf2(html_text):
+    """获取标签 <script id=’__NEXT_DATA__‘...</script> 的文本内容"""
+    etree_ele = etree.fromstring(html_text, etree.HTMLParser())
+    a= etree_ele.xpath('//*[@id="__NEXT_DATA__"]')[0]
+    dic = json.loads(a.text)
+    return dic
+
+
+def get_medium_inf1(html_text):
+    '''获取 “video":[...],"audio":[...] 的值'''
+    pattern = re.compile('"video":.*?"audio":.*?(?=,"dolby")', re.DOTALL)
+    medium_inf = pattern.search(html_text)
+    json_text = "{" + medium_inf.group() + "}"
+    dic = json.loads(json_text)
+    return dic
+
+
+def get_medium_inf2(html_text):
+    '''获取 "durl":[...] 的值'''
+    pattern = r'"durl":.*?(?=,"support_formats":)'
+    a = re.search(pattern, html_text)
     json_text = "{" + a.group() + "}"
     dic = json.loads(json_text)
     return dic
 
-# 接收总的媒体链接，构造为视频迭代器
-def generate_videourl(dic):
+
+def anay_main_inf1(main_inf):
+    """解析视频常规信息，用来获取封面，信息是附带的"""
+    bvid = main_inf['videoData']['bvid']  # 形如BV1Yt4y1J7qk
+    owner = main_inf['videoData']['owner']
+    dic = {
+        "视频url：": "https://www.bilibili.com/video/" + bvid,
+        '视频标题：': main_inf['videoData']['title'],
+        '总播放量：': main_inf['videoData']['stat']['view'],
+        '点赞人数：': main_inf['videoData']['stat']['like'],
+        '投币人数：': main_inf['videoData']['stat']['coin'],
+        '收藏人数：': main_inf['videoData']['stat']['favorite'],
+        '转发人数：': main_inf['videoData']['stat']['share'],
+        "评论人数": main_inf['videoData']['stat']['reply'],
+        "封面地址": main_inf["videoData"]["pic"],
+        "简介": main_inf["videoData"]["desc"],
+        "发布时间": main_inf['videoData']['ctime'],
+        "UP主mid": owner['mid'],
+        "UP主": owner['name'],
+        "UP主头像": owner['face']
+    }
+    print(json.dumps(dic, indent=4, ensure_ascii=False))
+    del dic
+    return main_inf["videoData"]["pic"]
+
+
+def anay_main_inf2(main_inf):
+    """获取 合集里所有视频的url(方式一)"""
+    episodes = main_inf['videoData']['ugc_season']['sections'][0]['episodes']
+    print('合集里有多少视频', len(episodes))
+    for i in episodes:
+        title = i['title']
+        url = f'https://www.bilibili.com/video/{i["bvid"]}'
+        print(f"标题：{title}, url：{url}")
+        yield (title, url)
+
+
+def anay_main_inf3(main_inf):
+    """获取 合集里所有视频的url(方式二)"""
+    bvid = main_inf['videoData']['bvid']
+    pages = main_inf['videoData']['pages']
+    print(f'合集里总共{len(pages)}个视频', )
+    for i, j in zip(pages, range(1, len(pages) + 1)):
+        title = i['part']
+        url = f'https://www.bilibili.com/video/{bvid}/?p={j}'
+        print(f"标题：{title}, url：{url}")
+        yield (title, url)
+
+
+def anay_main_inf4(main_inf):
+    """解析视频常规信息以及获取 session_id ，用于番剧的抓取"""
+    data = main_inf["props"]["pageProps"]["dehydratedState"]["queries"][1]["state"]["data"]
+    stat = data["stat"]
+    play_view_business_info = \
+    main_inf["props"]["pageProps"]["dehydratedState"]["queries"][0]["state"]["data"]["result"]["play_view_business_info"]
+    epid = play_view_business_info["episode_info"]["ep_id"]
+    bvid = play_view_business_info["episode_info"]["bvid"]
+    session_id = play_view_business_info["season_info"]["season_id"]
+    dic = {
+        "视频url1：": "https://www.bilibili.com/video/" + bvid,
+        "视频url2：": "https://www.bilibili.com/bangumi/play/ep" + str(epid),
+        "封面url：": data["seasons"][0]["cover"],
+        '视频标题：': data["season_title"],
+        "类型：": data["styles"],
+        '总播放量：': stat['views'],
+        '点赞人数：': stat['likes'],
+        '投币人数：': stat['share'],
+        '收藏人数：': stat['favorite'],
+        '转发人数：': stat['share'],
+        "评论人数：": stat['reply'],
+        "追番人数：": stat['favorites'],
+        "员工：": data["staff"],
+        "简介：": data["evaluate"],
+        "评分：": data["rating"]["score"],
+        "评分人数：": data["rating"]["count"]
+    }
+    print(json.dumps(dic, indent=4, ensure_ascii=False))
+    del dic
+    return session_id
+
+def anay_main_inf5(dic):
+    """获取 同一番剧的所有非会员集"""
+    for i in dic["result"]["episodes"]:
+        badge = i['badge']
+        if badge == '会员':
+            break
+        epid = i['id']
+        ep_link = i['link']
+        bvid_link = 'https://www.bilibili.com/video/' + i['bvid']
+        share_link = 'https://b23.tv/ep833513'
+        long_title = i['long_title']
+        pub_time = time.ctime(i['pub_time'])
+        cover = i['cover']
+        dic = {
+            'badge': badge,
+            'epid': epid,
+            'ep_link': ep_link,
+            'bvid_link': bvid_link,
+            'share_link': share_link,
+            'long_title': long_title,
+            'pub_time': pub_time
+        }
+        print(json.dumps(dic, indent=4, ensure_ascii=False))
+        yield (long_title, ep_link, cover)
+
+
+def anay_medium_inf1(medium_inf):
+    """获取视频链接"""
     accept_description = ["高码率 1080P+", "高清 1080P", "高清 720P", "清晰 480P", "流畅 360P"]
     accept_quality = [112, 80, 64, 32, 16]
-    for i in dic['video']:
+    for i in medium_inf['video']:
         print('视频质量', accept_description[accept_quality.index(i['id'])])
         yield i['baseUrl']
         yield i['base_url']
@@ -29,11 +163,11 @@ def generate_videourl(dic):
         for j in i['backup_url']:
             yield j
 
-# 接收总的媒体链接，构造为定义音频迭代器
-def generate_audiourl(dic):
-    accept_description = ["高码率 1080P+", "高清 1080P", "高清 720P" "清晰 480P", "流畅 360P"]
+def anay_medium_inf2(medium_inf):
+    """获取音频链接"""
+    accept_description = ["高码率 1080P+", "高清 1080P", "高清 720P", "清晰 480P", "流畅 360P"]
     accept_quality = [30112, 30280, 30264, 30232, 30216]
-    for i in dic['audio']:
+    for i in medium_inf['audio']:
         print('音频质量', accept_description[accept_quality.index(i['id'])])
         yield i['baseUrl']
         yield i['base_url']
@@ -42,92 +176,22 @@ def generate_audiourl(dic):
         for j in i['backup_url']:
             yield j
 
-# 接收reponse对象，获取变量__INITIAL_STATE__，里面有视频的相关信息
-def get_main_inf(res):
-    pattern_total_inf = '__INITIAL_STATE__=(.*?);\(function\(\)'
-    a = re.search(pattern_total_inf, res.text)
-    dic = json.loads(a.group(1))
-    return dic
-
-# 接收变量__INITIAL_STATE__的值，解析出里面包含的视频相关信息
-# 目前可解析：标题，总播放量，点赞人数，投币人数，收藏人数，转发人数，评论人数
-def anay_inf(dic):
-    bvid = dic['videoData']['bvid']  # 形如BV1Yt4y1J7qk
-    title = dic['videoData']['title']  # 标题
-    count_reply = dic['videoData']['stat']['reply']  # 评论数量
-    like = dic['videoData']['stat']['like']  # 点赞人数
-    coin = dic['videoData']['stat']['coin']  # 投币人数
-    share = dic['videoData']['stat']['share']  # 分享人数
-    view = dic['videoData']['stat']['view']  # 观看人数
-    favorite = dic['videoData']['stat']['favorite']  # 收藏人数
-    dic = {
-        "视频url：": "https://www.bilibili.com/video/"+bvid,
-        '视频标题：': title,
-        '总播放量：': view,
-        '点赞人数：': like,
-        '投币人数：': coin,
-        '收藏人数：': favorite,
-        '转发人数：': share,
-        "评论人数": count_reply
-    }
-    print(json.dumps(dic,indent=4,ensure_ascii=False))
-    return dic
-
-# 接收变量__INITIAL_STATE__的值，解析出合集其他视频信息
-# 第二种获取合集的方法
-def anay_medium_inf1(dic):
-    episodes = dic['videoData']['ugc_season']['sections'][0]['episodes']
-    li = []
-    for i in episodes:
-        title = i['title']
-        url = f'https://www.bilibili.com/video/{i["bvid"]}'
-        li.append((title, url))
-        print(f"标题：{title}, url：{url}")
-    print('合集里有多少视频', len(li))
-    return li
-
-# 接收变量__INITIAL_STATE__的值，解析出合集其他视频信息
-# 第一种获取合集的方法
-def anay_medium_inf2(dic):
-    bvid = dic['videoData']['bvid']
-    pages = dic['videoData']['pages']
-    li = []
-    for i, j in zip(pages, range(1, len(pages) + 1)):
-        title = i['part']
-        url = f'https://www.bilibili.com/video/{bvid}/?p={j}'
-        li.append((title, bvid))
-        print(f"标题：{title}, url：{url}")
-    print(f'合集里总共{len(pages)}个视频', )
-    return li
+def anay_medium_inf3(medium_inf):
+    """获取视频链接"""
+    i = medium_inf['durl'][0]
+    yield i['url']
+    for j in i['backup_url']:
+        yield j
 
 if __name__ == '__main__':
-    filename = 'BV1jE4PehEQq'
-    # 测试 web_page_parsing.anay_medium_inf1 方法
-    print("web_page_parsing.anay_medium_inf1".center(50, '-'))
-    with open(f"{filename}_inf.json", 'r', encoding='utf-8') as f:
-        main_inf = json.load(f)
-    anay_medium_inf1(main_inf)
-    print("web_page_parsing.anay_medium_inf1执行结束".center(50, '-'))
-
-    # 测试 web_page_parsing.anay_medium_inf2 方法
-    print("web_page_parsing.anay_medium_inf2".center(50, '-'))
-    with open(f"{filename}_inf.json", 'r', encoding='utf-8') as f:
-        main_inf = json.load(f)
-    anay_medium_inf2(main_inf)
-    print("web_page_parsing.anay_medium_inf2执行结束".center(50, '-'))
-
-    # 测试 web_page_parsing.generate_videourl 方法
-    print("web_page_parsing.generate_videourl".center(50, '-'))
-    with open(f"{filename}_medio.json", 'r', encoding='utf-8') as f:
-        mediums = json.load(f)
-    for i in generate_videourl(mediums):
+    filename = 'ss48511'
+    with open(f"../data/html/{filename}/{filename}.json", 'r', encoding='utf-8') as f:
+        dic = json.load(f)
+    # main_inf = get_main_inf2(text)
+    for i in anay_main_inf5(dic):
         print(i)
-    print("web_page_parsing.generate_videourl执行结束".center(50, '-'))
 
-    # 测试 web_page_parsing.generate_audiourl 方法
-    print("web_page_parsing.generate_audiourl".center(50, '-'))
-    with open(f"{filename}_medio.json", 'r', encoding='utf-8') as f:
-        mediums = json.load(f)
-    for i in generate_audiourl(mediums):
-        print(i)
-    print("web_page_parsing.generate_audiourl执行结束".center(50, '-'))
+    # with open(r'C:\Users\PC\Desktop\bilibili\a.json','r',encoding='utf-8') as f:
+    #     dic = json.load(f)
+    # for i in anay_main_inf5(dic):
+    #     print(i)

@@ -4,17 +4,19 @@
 
 ```
 ├───bili_video 主文件夹
-│   ├───code 代码文件夹
-│   │   ├───web_page_parsing.py 网页解析
-│   │   ├───file_write.py 文件写入
-│   │   ├───config.py 配置文件
-│   │   └───main.py 执行文件
-│   ├───data 媒体存放
-│   │   ├───audios 默认的音频输出路径
-│   │   └───videos 默认的视频输出路径
-│   └───html 后期更改代码会用到的，可以不用管
-│       └───BV1jE4PehEQq 
+    ├───code 代码文件夹
+    │   ├───web_page_parsing.py 网页解析
+    │   ├───config.py 配置文件
+    │   └───main.py 执行文件
+    └───data 数据存放
+        ├───audios 默认的音频输出路径
+        ├───cover 封面图片
+        ├───html 调试用数据
+        ├───mediums 默认的视频输出路径
+        └───videos 默认的画面输出路径
 ```
+
+
 
 ## 环境说明
 

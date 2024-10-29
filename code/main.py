@@ -9,15 +9,15 @@ import os
 import json
 import time
 from functools import wraps
+from moviepy.editor import ffmpeg_tools
 
 import requests
 from urllib import parse
 
 import web_page_parsing
-import file_write
 import config
 
-cookies = "buvid3=E02D1C1E-EE31-307A-7809-DA6D08532D8E65700infoc; b_nut=1728120365; _uuid=1457107102-D97A-6498-9F49-AB7D14E8716F66994infoc; CURRENT_FNVAL=4048; buvid4=1421D9DA-A74A-CED2-A0FA-E207C49EE8EC70651-024100509-UUXyNy9lPIW3btqqthYSVQ%3D%3D; rpdid=|(J~RYukl)Y~0J'u~k)uk|J~J; fingerprint=b6b0c74800d6fdc18a3b37cb2cad20f2; buvid_fp_plain=undefined; buvid_fp=b6b0c74800d6fdc18a3b37cb2cad20f2; header_theme_version=CLOSE; enable_web_push=DISABLE; home_feed_column=5; browser_resolution=1797-839; b_lsid=87E103BED_192C67F96D7; bmg_af_switch=1; bmg_src_def_domain=i2.hdslb.com; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzAxNjYzMDgsImlhdCI6MTcyOTkwNzA0OCwicGx0IjotMX0.kvUQoLFyRMWbWoDqlcYjzhswsJl5NHH67YtwoaZUz60; bili_ticket_expires=1730166248; sid=65rgxq0x"
+cookies = "buvid3=338B4E39-B9A3-551F-3309-16418A3E4A7A65281infoc; b_nut=1715768865; _uuid=6414C5DA-2AD5-8281-7724-D10241591671D66787infoc; buvid4=A84E2CFE-785A-3BC2-FF9D-D27DC066F5D938158-024033004-VpVPcDfyDBYapODwJgQqhw%3D%3D; rpdid=|(JYl)kmkuR)0J'u~ul~Y)))u; iflogin_when_web_push=0; header_theme_version=CLOSE; DedeUserID=484890515; DedeUserID__ckMd5=90b98033b995359d; enable_web_push=DISABLE; buvid_fp_plain=undefined; LIVE_BUVID=AUTO8117158623388548; PVID=1; hit-dyn-v2=1; home_feed_column=5; fingerprint=d2e4dcc62522dc26c76cb2730282d73a; CURRENT_QUALITY=80; CURRENT_BLACKGAP=0; buvid_fp=d2e4dcc62522dc26c76cb2730282d73a; CURRENT_FNVAL=4048; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzAyNjQ4NjQsImlhdCI6MTczMDAwNTYwNCwicGx0IjotMX0.W-m3fsrB8ShSpDzvLFtOoT96shj3ztTZc4BmxL_te6E; bili_ticket_expires=1730264804; b_lsid=D6F39C62_192CC8C438A; SESSDATA=77c9a4c3%2C1745560601%2C92c7b%2Aa1CjBcKQUlAlm_iiAGNSHdAuYMUnBvQqCBFKl9aaNG7OuXii13XSnLp7G07ToJWj2WQMcSVnQzQ3RtcUdnc2UxQ1h3cjFwSk9ZWTlSMV9oRmlyVzJpai1wSEJBemptcXlKdW1xOFdiYlgwSUFOM2hWNVluZ3E0VW13QzdfYzF3UXA4aE15Mlo2SWl3IIEC; bili_jct=3e2bcbe408e9a9b1f73271f9660bf2fc; sid=6fju1fdu; bp_t_offset_484890515=992872752367009792; browser_resolution=1489-710"
 headers = {
     "referer": "https://www.bilibili.com/",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
@@ -28,7 +28,7 @@ headers = {
 def retry(n):
     def wrapper(func):
         @wraps(func)
-        def abcd(*args,**kwargs):
+        def abcd(*args, **kwargs):
             for i in range(n):
                 result = func(*args, **kwargs)
                 if result:
@@ -42,7 +42,7 @@ def retry(n):
 @retry(3)
 def req(url):
     try:
-        time.sleep(3)
+        time.sleep(10)
         res = requests.get(url, headers=headers, timeout=(3.1, 10))
         if res.status_code == 200:
             return res
@@ -56,78 +56,65 @@ def req(url):
         print(e)
         return
 
-# 用于测试
-def a(entry_url):
-    res = req(entry_url)
-    parse_result = parse.urlparse(entry_url)
-    filename = parse_result.path.rstrip('/').split('/').pop()
-    original_path = os.getcwd()
-    os.chdir("../html")
-    os.mkdir(f'{filename}')
-    os.chdir(original_path)
-    with open(f"bili_video/html/{filename}/{filename}.html", 'w', encoding='utf-8') as f:
-        f.write(res.text)
-
-    # 测试 web_page_parsing.get_main_inf 方法
-    print("web_page_parsing.get_main_inf".center(50,'-'))
-    main_inf = web_page_parsing.get_main_inf(res)
-    with open(f"bili_video/html/{filename}/{filename}_inf.json", 'w', encoding='utf-8') as f:
-        json.dump(main_inf,f)
-    print("web_page_parsing.get_main_inf执行结束".center(50, '-'))
-
-    # 测试 web_page_parsing.anay_inf 方法
-    print("web_page_parsing.anay_inf".center(50, '-'))
-    web_page_parsing.anay_inf(main_inf)
-    print("web_page_parsing.anay_inf执行结束".center(50, '-'))
-
-    # 测试 web_page_parsing.get_medium_inf 方法
-    print("web_page_parsing.get_medium_inf".center(50,'-'))
-    medium_inf = web_page_parsing.get_medium_inf(res)
-    with open(f"bili_video/html/{filename}/{filename}_medio.json", 'w', encoding='utf-8') as f:
-        json.dump(medium_inf,f)
-    print("web_page_parsing.get_medium_inf执行结束".center(50,'-'))
+# 音视频请求并写入
+def file_write(urls,path):
+    for url in urls:
+        res = req(url)
+        if res:
+            with open(path, 'wb') as f:
+                f.write(res.content)
+            break
 
 
 
 # 抓取单个视频
-def get_one(entry_url,title=0):
-    res = req(entry_url)
-    medium_inf = web_page_parsing.get_medium_inf(res)
-    video_urls = web_page_parsing.generate_videourl(medium_inf)
-    audio_urls = web_page_parsing.generate_audiourl(medium_inf)
-    parse_result = parse.urlparse(entry_url)
-    filename = parse_result.path.split('/').pop()
+def get_one(entry_url, title=0):
     if title:
-        video_path = f"{config.video_dir}/video_{title}.mp4"
-        audio_path = f"{config.audio_dir}/audio_{title}.mp3"
+        video_path = f"{config.video_dir}/{title}.mp4"
+        audio_path = f"{config.audio_dir}/{title}.mp3"
+        medium_path = f"{config.medium_dir}/{title}.mp4"
     else:
-        video_path = f"{config.video_dir}/video_{filename}.mp4"
-        audio_path = f"{config.audio_dir}/audio_{filename}.mp3"
-    for video_url in video_urls:
-        res = req(video_url)
-        if res:
-            file_write.file_write(res, video_path)
+        parse_result = parse.urlparse(entry_url)
+        filename = parse_result.path.split('/').pop()
+        video_path = f"{config.video_dir}/{filename}.mp4"
+        audio_path = f"{config.audio_dir}/{filename}.mp3"
+        medium_path = f"{config.medium_dir}/{filename}.mp4"
+    methods = {
+        1: (web_page_parsing.get_medium_inf1, web_page_parsing.anay_medium_inf1, web_page_parsing.anay_medium_inf2,lambda x: []),
+        2: (web_page_parsing.get_medium_inf1, lambda x: [], web_page_parsing.anay_medium_inf2,lambda x: []),
+        3: (web_page_parsing.get_medium_inf1, web_page_parsing.anay_medium_inf1, lambda x: [],lambda x: []),
+        4: (web_page_parsing.get_medium_inf2, lambda x: [], lambda x: [], web_page_parsing.anay_medium_inf3)
+    }
+    res = req(entry_url)
+    if config.scrape_option != 3:
+        main_inf = web_page_parsing.get_main_inf1(res.text)
+        cover_url = web_page_parsing.anay_main_inf1(main_inf)
+        file_write((cover_url,), f'{config.cover_dir}/{title}.png')
+    for i in range(2):
+        try:
+            medium_inf = methods[config.file_option][0](res.text)
+            video_urls = methods[config.file_option][1](medium_inf)
+            audio_urls = methods[config.file_option][2](medium_inf)
+            medium_urls = methods[config.file_option][3](medium_inf)
             break
-    for audio_url in audio_urls:
-        res = req(audio_url)
-        if res:
-            file_write.file_write(res, audio_path)
-            break
-    # options = {
-    #     1: file_write.option1,
-    #     2: file_write.option2,
-    #     3: file_write.option3
-    # }
-    # options[config.file_option](video_path, audio_path)
+        except:
+            config.file_option = 1
+    file_write(video_urls,video_path)
+    file_write(audio_urls,audio_path)
+    file_write(medium_urls,medium_path)
+    if config.file_option == 1:
+        ffmpeg_tools.ffmpeg_merge_video_audio(video_path, audio_path, medium_path)
+        os.remove(video_path)
+        os.remove(audio_path)
+    print(f"已获取{title if title else filename}")
 
 # 抓取整个合集
 def get_all(entry_url):
     res = req(entry_url)
-    # 获取变量__INITIAL_STATE__（里面有视频的相关信息）
-    main_inf = web_page_parsing.get_main_inf(res)
+    main_inf = web_page_parsing.get_main_inf1(res.text)
     methods = [
-        web_page_parsing.anay_medium_inf1,
-        web_page_parsing.anay_medium_inf2
+        web_page_parsing.anay_main_inf2,
+        web_page_parsing.anay_main_inf3
     ]
     for method in methods:
         try:
@@ -137,19 +124,26 @@ def get_all(entry_url):
             li = []
     for i in li:
         title, url = i
-        get_one(url,title)
+        get_one(url, title)
 
-
+def get_all1(entry_url):
+    res = req(entry_url)
+    main_inf = web_page_parsing.get_main_inf2(res.text)
+    session_id = web_page_parsing.anay_main_inf4(main_inf)
+    res = req(f'https://api.bilibili.com/pgc/view/web/ep/list?season_id={session_id}')
+    dic = json.loads(res.text)
+    for i in web_page_parsing.anay_main_inf5(dic):
+        title, url, cover_url = i
+        file_write((cover_url,),f'{config.cover_dir}/{title}.png',)
+        get_one(url, title)
 
 if __name__ == '__main__':
-    entry_url = "https://www.bilibili.com/video/BV1QY411b7Kf/?spm_id_from=333.337.search-card.all.click"
-    title = "[问号]"
-
+    entry_url = "https://www.bilibili.com/video/BV1gA18YpEeS?spm_id_from=333.1007.tianma.1-1-1.click"
+    title = '【博德之门3】以防万一你没见过守墓人耶格中狂笑术'
     if config.scrape_option == 1:
         get_one(entry_url, title)
     elif config.scrape_option == 2:
         get_all(entry_url)
-    else:
-        a(entry_url)
-
+    elif config.scrape_option == 3:
+        get_all1(entry_url)
 

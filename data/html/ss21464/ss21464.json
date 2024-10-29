@@ -1,0 +1,1085 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "episodes": [
+            {
+                "aid": 18806005,
+                "badge": "",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": ""
+                },
+                "badge_type": 0,
+                "bvid": "BV1iW411e7eS",
+                "cid": 30671996,
+                "cover": "http://i0.hdslb.com/bfs/archive/183a8a544154bdac36e9401cc589092bd45c784b.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1425000,
+                "enable_vt": false,
+                "ep_id": 192287,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "2167.9万"
+                },
+                "id": 192287,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192287",
+                "long_title": "如今在古老边狱之底",
+                "pub_time": 1517070600,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第1话 如今在古老边狱之底",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192287",
+                "short_link": "https://b23.tv/ep192287",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1378,
+                        "start": 1287
+                    },
+                    "op": {
+                        "end": 5,
+                        "start": 0
+                    }
+                },
+                "stat": {
+                    "coin": 45412,
+                    "danmakus": 291836,
+                    "likes": 66457,
+                    "play": 21679485,
+                    "reply": 98672,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 45412,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "29.2万",
+                        "value": 291836
+                    },
+                    "likes": 66457,
+                    "reply": 98672,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "2167.9万播放",
+                        "text": "2167.9万",
+                        "value": 21679485
+                    }
+                },
+                "status": 2,
+                "subtitle": "已观看6010.9万次",
+                "title": "1",
+                "vid": ""
+            },
+            {
+                "aid": 19108027,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV19W411H7bF",
+                "cid": 31167986,
+                "cover": "http://i0.hdslb.com/bfs/archive/96ffba03a16234d8ed6b683d2a4b3ad1112389ea.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192288,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "609.9万"
+                },
+                "id": 192288,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192288",
+                "long_title": "死相 Dead Face",
+                "pub_time": 1517675400,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第2话 死相 Dead Face",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192288",
+                "short_link": "https://b23.tv/ep192288",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1419,
+                        "start": 1329
+                    },
+                    "op": {
+                        "end": 136,
+                        "start": 45
+                    }
+                },
+                "stat": {
+                    "coin": 17395,
+                    "danmakus": 130689,
+                    "likes": 18946,
+                    "play": 6098904,
+                    "reply": 30487,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 17395,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "13.1万",
+                        "value": 130689
+                    },
+                    "likes": 18946,
+                    "reply": 30487,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "609.9万播放",
+                        "text": "609.9万",
+                        "value": 6098904
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "2",
+                "vid": ""
+            },
+            {
+                "aid": 19419061,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1RW411776G",
+                "cid": 31785472,
+                "cover": "http://i0.hdslb.com/bfs/archive/6c5ef30f5797bc10f8caa8797e473bee56fb7d91.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1510000,
+                "enable_vt": false,
+                "ep_id": 192289,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "439.5万"
+                },
+                "id": 192289,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192289",
+                "long_title": "黄金鹿与暴风夜",
+                "pub_time": 1518280200,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第3话 黄金鹿与暴风夜",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192289",
+                "short_link": "https://b23.tv/ep192289",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1478,
+                        "start": 1387
+                    },
+                    "op": {
+                        "end": 140,
+                        "start": 49
+                    }
+                },
+                "stat": {
+                    "coin": 11641,
+                    "danmakus": 82199,
+                    "likes": 23939,
+                    "play": 4395085,
+                    "reply": 30780,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 11641,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "8.2万",
+                        "value": 82199
+                    },
+                    "likes": 23939,
+                    "reply": 30780,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "439.5万播放",
+                        "text": "439.5万",
+                        "value": 4395085
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "3",
+                "vid": ""
+            },
+            {
+                "aid": 19716833,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV11W411j7Rs",
+                "cid": 32149022,
+                "cover": "http://i0.hdslb.com/bfs/archive/ea931f2411f1f4ee6314100c88ba1d4f38854ab3.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1419000,
+                "enable_vt": false,
+                "ep_id": 192290,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "361万"
+                },
+                "id": 192290,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192290",
+                "long_title": "无貌之王 No Face May King",
+                "pub_time": 1518885000,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第4话 无貌之王 No Face May King",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192290",
+                "short_link": "https://b23.tv/ep192290",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1368,
+                        "start": 1277
+                    },
+                    "op": {
+                        "end": 187,
+                        "start": 96
+                    }
+                },
+                "stat": {
+                    "coin": 10717,
+                    "danmakus": 69227,
+                    "likes": 13393,
+                    "play": 3610196,
+                    "reply": 19440,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 10717,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "6.9万",
+                        "value": 69227
+                    },
+                    "likes": 13393,
+                    "reply": 19440,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "361万播放",
+                        "text": "361万",
+                        "value": 3610196
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "4",
+                "vid": ""
+            },
+            {
+                "aid": 20015090,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1HW41147CD",
+                "cid": 32797291,
+                "cover": "http://i0.hdslb.com/bfs/archive/f651e8e3ee225f3a81c516624dae2476d09b0a0c.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192291,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "299.8万"
+                },
+                "id": 192291,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192291",
+                "long_title": "祈祷之弓 -Yew Bow-",
+                "pub_time": 1519489740,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第5话 祈祷之弓 -Yew Bow-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192291",
+                "short_link": "https://b23.tv/ep192291",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1396,
+                        "start": 1304
+                    },
+                    "op": {
+                        "end": 392,
+                        "start": 301
+                    }
+                },
+                "stat": {
+                    "coin": 8200,
+                    "danmakus": 35360,
+                    "likes": 10477,
+                    "play": 2997859,
+                    "reply": 17217,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 8200,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "3.5万",
+                        "value": 35360
+                    },
+                    "likes": 10477,
+                    "reply": 17217,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "299.8万播放",
+                        "text": "299.8万",
+                        "value": 2997859
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "5",
+                "vid": ""
+            },
+            {
+                "aid": 20328763,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1tW411x7vM",
+                "cid": 33212313,
+                "cover": "http://i0.hdslb.com/bfs/archive/8617c5d71acdb04a13a7886f156592984202635f.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192292,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "275.6万"
+                },
+                "id": 192292,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192292",
+                "long_title": "永久机关·少女帝国 -Queen's Glass Game-",
+                "pub_time": 1520094600,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第6话 永久机关·少女帝国 -Queen's Glass Game-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192292",
+                "short_link": "https://b23.tv/ep192292",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1419,
+                        "start": 1329
+                    },
+                    "op": {
+                        "end": 160,
+                        "start": 69
+                    }
+                },
+                "stat": {
+                    "coin": 8444,
+                    "danmakus": 33731,
+                    "likes": 10718,
+                    "play": 2756258,
+                    "reply": 10064,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 8444,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "3.4万",
+                        "value": 33731
+                    },
+                    "likes": 10718,
+                    "reply": 10064,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "275.6万播放",
+                        "text": "275.6万",
+                        "value": 2756258
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "6",
+                "vid": ""
+            },
+            {
+                "aid": 20611541,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1VW411s769",
+                "cid": 94470637,
+                "cover": "http://i0.hdslb.com/bfs/archive/64168bba20c5995105212fedbb38273e4197ea29.jpg",
+                "dimension": {
+                    "height": 1080,
+                    "rotate": 0,
+                    "width": 1920
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192293,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "258.8万"
+                },
+                "id": 192293,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192293",
+                "long_title": "为某人所写的故事-Nursery Rhyme-",
+                "pub_time": 1520699400,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第7话 为某人所写的故事-Nursery Rhyme-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192293",
+                "short_link": "https://b23.tv/ep192293",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 0,
+                        "start": 0
+                    },
+                    "op": {
+                        "end": 139,
+                        "start": 47
+                    }
+                },
+                "stat": {
+                    "coin": 12608,
+                    "danmakus": 34023,
+                    "likes": 12368,
+                    "play": 2588377,
+                    "reply": 17428,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 12608,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "3.4万",
+                        "value": 34023
+                    },
+                    "likes": 12368,
+                    "reply": 17428,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "258.8万播放",
+                        "text": "258.8万",
+                        "value": 2588377
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "7",
+                "vid": ""
+            },
+            {
+                "aid": 20886199,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1oW411p7hP",
+                "cid": 34225015,
+                "cover": "http://i0.hdslb.com/bfs/archive/9ad80dcd79a0e2a7ae93927f980a09d39666c9cc.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192294,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "257.9万"
+                },
+                "id": 192294,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192294",
+                "long_title": "无二打 -Dead End-",
+                "pub_time": 1521304200,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第8话 无二打 -Dead End-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192294",
+                "short_link": "https://b23.tv/ep192294",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1264,
+                        "start": 1173
+                    },
+                    "op": {
+                        "end": 162,
+                        "start": 71
+                    }
+                },
+                "stat": {
+                    "coin": 8521,
+                    "danmakus": 33796,
+                    "likes": 17506,
+                    "play": 2578957,
+                    "reply": 11558,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 8521,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "3.4万",
+                        "value": 33796
+                    },
+                    "likes": 17506,
+                    "reply": 11558,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "257.9万播放",
+                        "text": "257.9万",
+                        "value": 2578957
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "8",
+                "vid": ""
+            },
+            {
+                "aid": 21177113,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1FW41137mm",
+                "cid": 34772823,
+                "cover": "http://i0.hdslb.com/bfs/archive/637d21b830158cb6dbcd4b07811bc7f1a6155b9e.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1490000,
+                "enable_vt": false,
+                "ep_id": 192295,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "247.5万"
+                },
+                "id": 192295,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192295",
+                "long_title": "邀至心荡神驰的黄金剧场 -Aestus Domus Aurea-",
+                "pub_time": 1521909000,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第9话 邀至心荡神驰的黄金剧场 -Aestus Domus Aurea-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192295",
+                "short_link": "https://b23.tv/ep192295",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1416,
+                        "start": 1325
+                    },
+                    "op": {
+                        "end": 125,
+                        "start": 33
+                    }
+                },
+                "stat": {
+                    "coin": 8460,
+                    "danmakus": 40622,
+                    "likes": 10658,
+                    "play": 2475054,
+                    "reply": 11539,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 8460,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "4.1万",
+                        "value": 40622
+                    },
+                    "likes": 10658,
+                    "reply": 11539,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "247.5万播放",
+                        "text": "247.5万",
+                        "value": 2475054
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "9",
+                "vid": ""
+            },
+            {
+                "aid": 21469085,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1UW411u7Aq",
+                "cid": 35332704,
+                "cover": "http://i0.hdslb.com/bfs/archive/646ee433ce5b79ca50829945b3535b2c43148f35.jpg",
+                "dimension": {
+                    "height": 360,
+                    "rotate": 0,
+                    "width": 640
+                },
+                "duration": 1420000,
+                "enable_vt": false,
+                "ep_id": 192296,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "336.1万"
+                },
+                "id": 192296,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192296",
+                "long_title": "无限的残骸-Unlimited / Raise Dead-",
+                "pub_time": 1522513800,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第10话 无限的残骸-Unlimited / Raise Dead-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192296",
+                "short_link": "https://b23.tv/ep192296",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 1384,
+                        "start": 1290
+                    },
+                    "op": {
+                        "end": 0,
+                        "start": 0
+                    }
+                },
+                "stat": {
+                    "coin": 9499,
+                    "danmakus": 25720,
+                    "likes": 15450,
+                    "play": 3361332,
+                    "reply": 17654,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 9499,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "2.6万",
+                        "value": 25720
+                    },
+                    "likes": 15450,
+                    "reply": 17654,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "336.1万播放",
+                        "text": "336.1万",
+                        "value": 3361332
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "10",
+                "vid": ""
+            },
+            {
+                "aid": 28030784,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV15s411P7Be",
+                "cid": 48432040,
+                "cover": "http://i0.hdslb.com/bfs/archive/c6db802c2077c1e089767d22786092ff8f1e61fa.jpg",
+                "dimension": {
+                    "height": 0,
+                    "rotate": 0,
+                    "width": 0
+                },
+                "duration": 1514097,
+                "enable_vt": false,
+                "ep_id": 192297,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "236.9万"
+                },
+                "id": 192297,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192297",
+                "long_title": "轮转胜利之剑 -Excalibur Gallatin-",
+                "pub_time": 1532869200,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第11话 轮转胜利之剑 -Excalibur Gallatin-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192297",
+                "short_link": "https://b23.tv/ep192297",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 0,
+                        "start": 0
+                    },
+                    "op": {
+                        "end": 0,
+                        "start": 0
+                    }
+                },
+                "stat": {
+                    "coin": 7435,
+                    "danmakus": 28913,
+                    "likes": 13126,
+                    "play": 2369474,
+                    "reply": 4490,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 7435,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "2.9万",
+                        "value": 28913
+                    },
+                    "likes": 13126,
+                    "reply": 4490,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "236.9万播放",
+                        "text": "236.9万",
+                        "value": 2369474
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "11",
+                "vid": ""
+            },
+            {
+                "aid": 28031266,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV15s411P7Gk",
+                "cid": 48433021,
+                "cover": "http://i0.hdslb.com/bfs/archive/860eceab5f859b1af0180e365a622ba62c3cf6d2.jpg",
+                "dimension": {
+                    "height": 0,
+                    "rotate": 0,
+                    "width": 0
+                },
+                "duration": 1424131,
+                "enable_vt": false,
+                "ep_id": 192298,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "165.7万"
+                },
+                "id": 192298,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192298",
+                "long_title": "天轮圣王 -Chakravartin-",
+                "pub_time": 1532869200,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》第12话 天轮圣王 -Chakravartin-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192298",
+                "short_link": "https://b23.tv/ep192298",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 0,
+                        "start": 0
+                    },
+                    "op": {
+                        "end": 0,
+                        "start": 0
+                    }
+                },
+                "stat": {
+                    "coin": 5364,
+                    "danmakus": 20682,
+                    "likes": 6847,
+                    "play": 1657267,
+                    "reply": 1955,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 5364,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "2.1万",
+                        "value": 20682
+                    },
+                    "likes": 6847,
+                    "reply": 1955,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "165.7万播放",
+                        "text": "165.7万",
+                        "value": 1657267
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "12",
+                "vid": ""
+            },
+            {
+                "aid": 28032610,
+                "badge": "会员",
+                "badge_info": {
+                    "bg_color": "#FB7299",
+                    "bg_color_night": "#D44E7D",
+                    "text": "会员"
+                },
+                "badge_type": 0,
+                "bvid": "BV1Vs411P7ZH",
+                "cid": 48435343,
+                "cover": "http://i0.hdslb.com/bfs/archive/1611827a3c084b56fa7687902965cc0173b9a68a.jpg",
+                "dimension": {
+                    "height": 0,
+                    "rotate": 0,
+                    "width": 0
+                },
+                "duration": 2864364,
+                "enable_vt": false,
+                "ep_id": 192299,
+                "from": "bangumi",
+                "icon_font": {
+                    "name": "playdata-square-line@500",
+                    "text": "354.1万"
+                },
+                "id": 192299,
+                "is_view_hide": false,
+                "link": "https://www.bilibili.com/bangumi/play/ep192299",
+                "long_title": "喝彩的玫瑰 -Olympia Plaudere-",
+                "pub_time": 1532869200,
+                "pv": 0,
+                "release_date": "",
+                "rights": {
+                    "allow_demand": 0,
+                    "allow_dm": 1,
+                    "allow_download": 0,
+                    "area_limit": 0
+                },
+                "share_copy": "《Fate/EXTRA Last Encore》最终话 喝彩的玫瑰 -Olympia Plaudere-",
+                "share_url": "https://www.bilibili.com/bangumi/play/ep192299",
+                "short_link": "https://b23.tv/ep192299",
+                "showDrmLoginDialog": false,
+                "skip": {
+                    "ed": {
+                        "end": 0,
+                        "start": 0
+                    },
+                    "op": {
+                        "end": 0,
+                        "start": 0
+                    }
+                },
+                "stat": {
+                    "coin": 28329,
+                    "danmakus": 74525,
+                    "likes": 39325,
+                    "play": 3540728,
+                    "reply": 20288,
+                    "vt": 0
+                },
+                "stat_for_unity": {
+                    "coin": 28329,
+                    "danmaku": {
+                        "icon": "danmu-square-line@500",
+                        "pure_text": "",
+                        "text": "7.5万",
+                        "value": 74525
+                    },
+                    "likes": 39325,
+                    "reply": 20288,
+                    "vt": {
+                        "icon": "playdata-square-line@500",
+                        "pure_text": "354.1万播放",
+                        "text": "354.1万",
+                        "value": 3540728
+                    }
+                },
+                "status": 13,
+                "subtitle": "已观看6010.9万次",
+                "title": "最终话",
+                "vid": ""
+            }
+        ],
+        "play_strategy": {
+            "strategies": [
+                "common_section-formal_first_ep",
+                "common_section-common_section",
+                "common_section-next_season",
+                "formal-finish-next_season",
+                "formal-end-other_section",
+                "formal-end-next_season",
+                "ord"
+            ]
+        }
+    }
+}
